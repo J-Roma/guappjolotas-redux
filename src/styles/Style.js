@@ -241,7 +241,6 @@ export const EachMealCard = styled.div`
   margin-right:auto;
   display: flex;
   cursor: pointer;
-  
 `;
 
 export const EachMealImage = styled.img`
