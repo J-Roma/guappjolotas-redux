@@ -1,11 +1,11 @@
 import React from 'react'
 
-const Main = () => {
+const Perfil = () => {
     return (
         <div>
-            <h1>Hola</h1>
+            <h1>Perfil</h1>
         </div>
     )
 }
 
-export default Main
+export default Perfil
