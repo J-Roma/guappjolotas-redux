@@ -3,7 +3,7 @@ import { useDispatch, useSelector } from "react-redux";
 
 import VerLogin from "../pages/VerLogin";
 import { useForm } from "../hooks/useForm";
-import { startLoginEmailPassword, startGoogleLogin } from "../actions/auth";
+import { startLoginEmailPassword, startGoogleLogin, startFacebookLogin } from "../actions/auth";
 
 const Login = () => {
     
@@ -26,6 +26,10 @@ const Login = () => {
   const handleGoogle = () => {
     dispatch(startGoogleLogin());
   };
+  
+  const handleFacebook = () => {
+    dispatch(startFacebookLogin());
+  };
 
   return (
     <div>
@@ -35,6 +39,7 @@ const Login = () => {
         handleInputChange={handleInputChange}
         handleLogin={handleLogin}
         handleGoogle={handleGoogle}
+        handleFacebook={handleFacebook}
         loading={loading}
       />
     </div>

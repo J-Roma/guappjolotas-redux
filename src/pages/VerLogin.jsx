@@ -15,6 +15,7 @@ const VerLogin = ({
   handleInputChange,
   handleLogin,
   handleGoogle,
+  handleFacebook,
   loading,
 }) => {
   return (
@@ -64,7 +65,7 @@ const VerLogin = ({
         </div>
         <div
           className="w-100 btn btn-lg  btn-outline-info mt-3"
-          onClick={handleGoogle}
+          onClick={handleFacebook}
           disabled={loading}
         >
           <FontAwesomeIcon icon={faFacebook} /> Iniciar sesión con Facebook
@@ -75,8 +76,8 @@ const VerLogin = ({
         </div>
         <p className="mt-5 mb-3 text-muted">&copy; 2021</p>
       </form>
-    </Main>
+    </Main> 
   );
-};
+}; 
 
 export default VerLogin;
