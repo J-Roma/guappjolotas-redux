@@ -11,5 +11,7 @@ export const types = {
     buySetProduct: "[Buy] SetProduct",
     buySetAmount: "[Buy] SetAmount",
     buySetPrice: "[Buy] SetPrice",
+
+    dbProductos: "[Db] Traer Productos"
     
   };

@@ -4,7 +4,7 @@ import {FontAwesomeIcon} from '@fortawesome/react-fontawesome'
 import {faMinus, faPlus} from '@fortawesome/free-solid-svg-icons'
 import { useDispatch, useSelector } from 'react-redux'
 import { useCounter } from '../../hooks/useCounter'
-import { setAmount } from '../../actions/addPedido'
+import { setAmount, setPrice } from '../../actions/addPedido'
 
 const Card = styled.div`
     background: white;
@@ -27,6 +27,7 @@ const Counter = () => {
 
     useEffect(() => {
         dispatch(setAmount(count))
+        dispatch(setPrice(count*25))
         
     }, [decrement, increment])
     return (

@@ -1,8 +1,6 @@
 import React, { useRef, useEffect, useState } from 'react'
+import { useSelector } from 'react-redux';
 import styled from 'styled-components';
-import axios from "axios"
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
-import { faChevronLeft, faChevronRight } from '@fortawesome/free-solid-svg-icons'
 
 //Inicio de los Estilos
 
@@ -26,16 +24,19 @@ const Price = styled.h1`
 // Inicio del componente
 export const Slider = () => {
 
+    const state = useSelector(state => state.db.dbProducts.product)
+    
+
     return (
         <div className="container">
             <div className="row text-center p-2">
                 <div className="col-12">
-                    <Img src="https://i.imgur.com/o1aaJ1d.png" alt="GV" />
+                    <Img src={state[0].url} alt="GV" />
                 </div>
                 <div className="col-12">
                     <div className="">
-                        <Guajolota>Guajolota de Tamal Verde</Guajolota>
-                        <Price>25 MXN</Price>
+                        <Guajolota>{state[0].name}</Guajolota>
+                        <Price>{state[0].price} MXN</Price>
                     </div>
                 </div>
             </div>
