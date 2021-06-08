@@ -7,4 +7,6 @@ export const types = {
     uiStarLogin: "[ui] Start Login",
     uiFinishLogin: "[ui] Finish Login",
     uiStopLogin: "[ui] Stop Login",
+
+    searchProducto: "[search] product"
   };
