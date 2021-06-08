@@ -1,6 +1,8 @@
 import React, { useEffect } from 'react'
 import { useDispatch, useSelector } from 'react-redux'
 import { load } from '../actions/dbProductos'
+import AddedComboDescription from './AddedComboDescription'
+import CardOrderSection from './CardOrderSection'
 import BotonComprar from './subCompra/BotonComprar'
 import Counter from './subCompra/Counter'
 import Sabores from './subCompra/Sabores'
@@ -12,13 +14,13 @@ const VerCompra = () => {
     
     const state = useSelector(state => state.db.dbProducts)
     const dispatch = useDispatch()
-    useEffect(() => {
+    // useEffect(() => {
         
-        if (!state.lengt){
-            dispatch(load())
-        }
+    //     if (!state.lengt){
+    //         dispatch(load())
+    //     }
 
-    }, [])
+    // }, [])
 
     return (
         <div>
@@ -26,6 +28,8 @@ const VerCompra = () => {
             <Counter/>
             <Sabores/>
             <BotonComprar/>
+            <AddedComboDescription/>
+            <CardOrderSection/>
         </div>
     )
 }

@@ -13,17 +13,18 @@ export const  loadProducts = (product) => {
 export const load = (datos) => {    
     
     return (dispatch) => {
-        db.collection('app/productos/guajalotas')
-        .onSnapshot( snap => {
-          const productos = [];
-           snap.forEach(snapHijo => {
-            productos.push({
-              ...snapHijo.data()
-            })
-            console.log(productos);
+      db.collection(`app/productos/${datos}`).get()
+      .then((snap)=>{
+          const productosArr = []
+
+          snap.forEach(hijo=>{
+              productosArr.push({
+                  ...hijo.data()
+              })
 
           })
-          dispatch(loadProducts(productos))
-        });   
+          console.log(productosArr);
+          dispatch(loadProducts(productosArr))
+      })  
     }
 }
