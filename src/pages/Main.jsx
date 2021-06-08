@@ -1,9 +1,13 @@
 import React from 'react'
+import CardMainPage from './CardMainPage'
+import NameMealsList from './NameMealsList'
 
 const Main = () => {
     return (
         <div>
-            <h1>Hola</h1>
+            <NameMealsList/>
+            <CardMainPage />
+
         </div>
     )
 }

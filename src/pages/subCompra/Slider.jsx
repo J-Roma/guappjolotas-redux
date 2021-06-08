@@ -31,12 +31,18 @@ export const Slider = () => {
         <div className="container">
             <div className="row text-center p-2">
                 <div className="col-12">
-                    <Img src={state.url} alt="GV" />
+                    <Img 
+                    src={state.url} 
+                    alt="GV" />
                 </div>
                 <div className="col-12">
                     <div className="">
-                        <Guajolota>{state.name}</Guajolota>
-                        <Price>{state.price} MXN</Price>
+                        <Guajolota>
+                            {state.name}
+                            </Guajolota>
+                        <Price>
+                            {state.price} 
+                            MXN</Price>
                     </div>
                 </div>
             </div>
