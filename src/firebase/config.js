@@ -2,7 +2,7 @@ import firebase from "firebase/app";
 import "firebase/firestore";
 import "firebase/auth";
 
-// Your web app's Firebase configuration
+//Server Grupal
 const firebaseConfig = {
   apiKey: "AIzaSyDGia3RVuXuf3UFHBtj5GJHvbbGwnwNUH4",
   authDomain: "guappjolotas.firebaseapp.com",

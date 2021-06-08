@@ -18,4 +18,12 @@ export const types = {
   dbCart: "[Db] Traer productos carrito",
   dbCartModal: "[Db] poner modal",
   setProductView: "[Set] Colocar Producto Individual",
+
+  productAddNew: "[Product] New Product",
+  productActive: "[Product] Set Active Product",
+  productLoad: "[Product] Load Products",
+  productUpdated: "[Product] Updated Product",
+  productFileUrl: "[Product] Updated Image Url",
+  productDelete: "[Product] Delete Product",
+  productLogoutCleaning: "[Product] Logout Cleaning",
 };
