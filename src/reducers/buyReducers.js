@@ -3,7 +3,8 @@ import { types } from "../types/types";
 const initialState = {
     product: "",
     amount: 1,
-    price: ""
+    price: "",
+    combo:{}
 }
 
 export const buyReducers = (state = initialState, action) => {
@@ -29,6 +30,13 @@ export const buyReducers = (state = initialState, action) => {
                 ...state,
                 price: action.payload,
             };
+        
+        case types.buySetCombo:
+        
+        return {
+            ...state,
+            combo: action.payload,
+        };
 
         default:
             return state;

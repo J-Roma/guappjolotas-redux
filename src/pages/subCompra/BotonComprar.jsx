@@ -23,10 +23,17 @@ const Button = styled.button`
 const BotonComprar = () => {
 
     const compra = useSelector(state => state.buy)
+    const {combo} = compra
+    let quantityCombo = 0
+    let priceCombo = 0
+    if(combo.price){
+        quantityCombo = combo.quantity
+        priceCombo = combo.price
+    }
 
     return (
         <div>
-            <Button>Agregar {compra.amount} al carrito $ {compra.price}  </Button>
+            <Button>Agregar {compra.amount+ quantityCombo} al carrito $ {compra.price + priceCombo}  </Button>
         </div>
     )
 }

@@ -1,9 +1,9 @@
 import React, {useEffect, useState} from 'react'
-import { useSelector } from 'react-redux'
+import { useDispatch, useSelector } from 'react-redux'
 import styled from 'styled-components'
 import { db } from '../firebase/config'
 import color from "../styles/predeterminatedStyles"
-
+import {setCombo} from "../actions/addPedido"
 
 const ConstraintContainer = styled.div`
         max-width: 87%;
@@ -64,6 +64,7 @@ function CardOrderSection() {
 
     const [dataCategorie, setDataCategorie] = useState([])
     const product = useSelector(state => state.db.dbProducts.product.category)
+    const dispatch = useDispatch()
 
     function handleCheck(e, eachMealInfo) {
         
@@ -82,7 +83,7 @@ function CardOrderSection() {
         let extraMealExists = document.querySelector("input[type='checkbox']:checked")
         console.log(extraMealExists,eachMealInfo)
         eachMealInfo.quantity = 1
-        // extraMealExists ? props.setCombo(eachMealInfo) :  props.setCombo(null);
+        extraMealExists ? dispatch(setCombo(eachMealInfo)): dispatch(setCombo({})) ;
     }
     let mealCategorie;
 

@@ -21,3 +21,10 @@ export const  setPrice = (price) => {
     };
 };
 
+export const  setCombo = (combo) => {
+    return {
+        type: types.buySetCombo,
+        payload: combo,
+    };
+};
+

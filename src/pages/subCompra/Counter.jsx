@@ -4,7 +4,7 @@ import {FontAwesomeIcon} from '@fortawesome/react-fontawesome'
 import {faMinus, faPlus} from '@fortawesome/free-solid-svg-icons'
 import { useDispatch, useSelector } from 'react-redux'
 import { useCounter } from '../../hooks/useCounter'
-import { setAmount, setPrice } from '../../actions/addPedido'
+import { setAmount, setPrice, setProduct } from '../../actions/addPedido'
 
 const Card = styled.div`
     background: white;
@@ -18,6 +18,7 @@ const Counter = () => {
 
     const dispatch = useDispatch()
     const [count, decrement, increment] = useCounter()
+    const currentProduct = useSelector(state => state.db.dbProducts.product)
 
     const handleClick = () => {
         if (count > 1){
@@ -28,6 +29,8 @@ const Counter = () => {
     useEffect(() => {
         dispatch(setAmount(count))
         dispatch(setPrice(count*25))
+        currentProduct.quantity = count
+        dispatch(setProduct(currentProduct))
         
     }, [decrement, increment])
     return (
