@@ -17,4 +17,5 @@ export const types = {
   dbProductos: "[Db] Traer Productos",
   dbCart: "[Db] Traer productos carrito",
   dbCartModal: "[Db] poner modal",
+  setProductView: "[Set] Colocar Producto Individual",
 };

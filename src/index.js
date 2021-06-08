@@ -12,7 +12,7 @@ ReactDOM.render(
   <React.StrictMode>
     <Provider store={store}>
       <AppRoutes />
-      <GlobalStyle />
+    {/*   <GlobalStyle /> */}
     </Provider>
   </React.StrictMode>,
   document.getElementById("root")

@@ -5,6 +5,7 @@ import thunk from "redux-thunk";
 import { searchReducer } from "../reducers/searchReducer";
 import { buyReducers } from "../reducers/buyReducers";
 import { dbProductReducers } from "../reducers/dbProductReducers";
+import { setSingleProduct } from "../reducers/setReducers";
 
 const reducers = combineReducers({
   auth: authReducer,
@@ -12,6 +13,7 @@ const reducers = combineReducers({
   search: searchReducer,
   buy: buyReducers,
   db: dbProductReducers,
+  single: setSingleProduct,
 });
 
 const composeEnhancers =

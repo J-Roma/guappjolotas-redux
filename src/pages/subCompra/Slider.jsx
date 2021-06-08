@@ -24,7 +24,7 @@ const Price = styled.h1`
 // Inicio del componente
 export const Slider = () => {
 
-    const state = useSelector(state => state.db.dbProducts.product)
+    const state = useSelector(state => state.single.singleProduct)
     
 
     return (
