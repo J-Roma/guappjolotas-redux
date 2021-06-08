@@ -6,7 +6,7 @@ import {
   Switch,
 } from "react-router-dom";
 import Carrito from "../components/Carrito";
-import Login from "../components/Login";
+import Login from "../components/login";
 import Registro from "../components/Registro";
 
 import Main from "../pages/Main";
