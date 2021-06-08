@@ -1,5 +1,6 @@
 import { types } from "../types/types";
 import {db} from '../firebase/config'
+import { setSingle } from "./setSingleProduct";
 
 export const  loadProducts = (product) => {
     return {
@@ -32,17 +33,18 @@ export const load = (datos) => {
 export const loadCompraProducto = (producto, sabor) => {    
     
   return (dispatch) => {
-      db.collection(`app/productos/${producto}/${sabor}`)
+      db.collection(`app/productos/${producto}`)
       .onSnapshot( snap => {
         const productos = [];
          snap.forEach(snapHijo => {
-          productos.push({
+           snapHijo.id === sabor && productos.push({
             ...snapHijo.data()
           })
-          console.log(productos);
+          
+          console.log(snapHijo.id);
 
         })
-        dispatch(loadProducts(productos))
+        dispatch(setSingle(productos[0]))
       });   
   }
 }

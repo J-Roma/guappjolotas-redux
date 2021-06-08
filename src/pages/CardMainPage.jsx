@@ -3,6 +3,7 @@ import { useDispatch, useSelector } from 'react-redux';
 import { Link } from 'react-router-dom';
 import styled, { createGlobalStyle } from 'styled-components';
 import { load, loadProducts } from '../actions/dbProductos';
+import { setSingle } from '../actions/setSingleProduct';
 import color from '../styles/predeterminatedStyles';
 
 // import { MensajeBuscador, IBuscador, H1Buscador } from '../Styles/Style';
@@ -60,7 +61,7 @@ function CardMainPage() {
         // e.preventDefault()
         console.log(eachMeal);
          let x = await eachMeal
-        dispatch(loadProducts(x))
+        dispatch(setSingle(x))
        
     }
 

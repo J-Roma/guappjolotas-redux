@@ -1,8 +1,9 @@
 import React from 'react'
-import { useDispatch } from 'react-redux'
+import { useDispatch, useSelector } from 'react-redux'
 import styled from 'styled-components'
 import { setProduct } from '../../actions/addPedido'
 import { loadCompraProducto } from '../../actions/dbProductos'
+import { setSingleProduct } from '../../actions/setSingleProduct'
 
 const Center = styled.div`
     margin: 0 auto;
@@ -20,15 +21,15 @@ const Img = styled.img`
 const Sabores = () => {
 
     const dispatch = useDispatch()
-    const category = useSelector(state => state.db.dbProducts.product)
+    const category = useSelector(state => state.single.singleProduct)
     const handleProduct = (e) => {
-
+        console.log(e.target.name);
         dispatch(setProduct(e.target.id))
-        dispatch(loadCompraProducto(category, e.target.name))
+        dispatch(setSingleProduct(category.category, e.target.name))
     }
 
     return (
-        category.category !== "drink" ?
+        category.category !== "drinks" ?
         <Center className="container p-4">
             <h3><strong>Sabor</strong></h3>
             <div class="d-flex flex-row flex-wrap bd-highlight mb-3 justify-content-start gap-2 ms-1">

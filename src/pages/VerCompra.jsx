@@ -5,6 +5,7 @@ import AddedComboDescription from './AddedComboDescription'
 import CardOrderSection from './CardOrderSection'
 import BotonComprar from './subCompra/BotonComprar'
 import Counter from './subCompra/Counter'
+import { NavBarCompra } from './subCompra/NavBarCompra'
 import Sabores from './subCompra/Sabores'
 import {Slider} from './subCompra/Slider'
 
@@ -24,6 +25,7 @@ const VerCompra = () => {
 
     return (
         <div>
+            <NavBarCompra/>
             <Slider/>
             <Counter/>
             <Sabores/>
