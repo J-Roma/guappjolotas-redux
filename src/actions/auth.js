@@ -1,5 +1,5 @@
 import { types } from "../types/types";
-import { firebase, googleAuthProvider } from "../firebase/config";
+import { firebase, googleAuthProvider, facebookAuthProvider } from "../firebase/config";
 import { StartLoading, FinishLoading, StopLoading } from "./uiError";
 import Swal from "sweetalert2";
 
@@ -40,6 +40,27 @@ export const startGoogleLogin = () => {
     firebase
       .auth()
       .signInWithPopup(googleAuthProvider)
+      .then(({ user }) => {
+        dispatch(login(user.uid, user.displayName));
+        console.log(user);
+      })
+      .catch((e) => {
+        Swal.fire({
+          position: "center",
+          icon: "error",
+          title: `${e.message}`,
+          showConfirmButton: false,
+          timer: 1500,
+        });
+      });
+  };
+};
+
+export const startFacebookLogin = () => {
+  return (dispatch) => {
+    firebase
+      .auth()
+      .signInWithPopup(facebookAuthProvider)
       .then(({ user }) => {
         dispatch(login(user.uid, user.displayName));
         console.log(user);
