@@ -7,10 +7,10 @@ import CardMainPage from './CardMainPage'
 export const Modal = ({ verModal, setVerModal }) => {
 
     //aqui cargo los valores a lllevar a useBuscar.js quien me hace la busqueda
-    const { buscar, escribir, comidas } = useBuscar("");
+    const { buscar, escribir, comidas, plato } = useBuscar("");
 
     //convierto la lista de comidas en objetos para integrarlo con el CardMainPage.jsx
-    const prueba={data:comidas}
+    const prueba=plato
 
     return (
         <>
@@ -27,7 +27,7 @@ export const Modal = ({ verModal, setVerModal }) => {
                     </ContenedorBotonesBuscador>
                     {/* me carga los objetos que coincidieron en la busqueda del useBuscar.js y lo redirije a la seccion del CardMain.jsx*/}
                     <SectionBuscador>
-                        {CardMainPage(prueba)}
+                        {<CardMainPage prueba={prueba}/>}
                     </SectionBuscador>
                 </ContenedorModalBuscador>
             ) : null}
