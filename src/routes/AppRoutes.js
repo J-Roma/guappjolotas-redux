@@ -16,13 +16,13 @@ import VerCompra from "../pages/VerCompra";
 const appRoutes = () => {
   return (
     <Router>
-      {/* <Navbar /> */}
+      <Navbar />
       <Switch>
         <Route exact path="/" component={VerCompra} />
-{/*         <Route exact path="/carrito" component={Carrito} />
+        <Route exact path="/carrito" component={Carrito} />
         <Route exact path="/login" component={Login} />
         <Route exact path="/registro" component={Registro} />
- */}
+
         <Redirect to="/" />
       </Switch>
     </Router>
