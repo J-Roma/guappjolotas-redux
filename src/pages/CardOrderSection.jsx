@@ -87,9 +87,9 @@ function CardOrderSection() {
     }
     let mealCategorie;
 
-    if(product === "drink"){
+    if(product === "drinks"){
         mealCategorie = "guajalotas";
-    }else if(product === "guajolota"){
+    }else if(product === "guajalotas"){
         mealCategorie = "drinks"
     }else{
         mealCategorie ="drinks"

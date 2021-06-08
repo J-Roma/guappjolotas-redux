@@ -13,6 +13,8 @@ export const types = {
     buySetPrice: "[Buy] SetPrice",
     buySetCombo: "[Buy] SetCombo",
 
-    dbProductos: "[Db] Traer Productos"
+    dbProductos: "[Db] Traer Productos",
+    dbCart: "[Db] Traer productos carrito",
+    dbCartModal: "[Db] poner modal"
     
   };

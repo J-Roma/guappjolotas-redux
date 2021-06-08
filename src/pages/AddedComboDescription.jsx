@@ -32,7 +32,7 @@ function AddedComboDescription() {
     let title = "Guajolocombo";
     let description = "torta";
     let temporal = product.category
-    if(temporal === "guajolota"  || temporal === "tamal"){
+    if(temporal === "guajalotas"  || temporal === "tamales"){
         title = "Bebidas";
         description = "bebida" 
     }

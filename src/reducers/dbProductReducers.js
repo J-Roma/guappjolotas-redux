@@ -1,7 +1,9 @@
 import { types } from "../types/types";
 
 const initialState = {
-    dbProducts: []
+    dbProducts: [],
+    cart:[],
+    modal:false
 }
 
 export const dbProductReducers = (state = initialState, action) => {
@@ -11,6 +13,18 @@ export const dbProductReducers = (state = initialState, action) => {
             return {
                 ...state,
                 dbProducts: action.payload,
+            };
+
+        case types.dbCart:
+            return {
+                ...state,
+                cart: action.payload,
+            };
+        
+        case types.dbCartModal:
+            return {
+                ...state,
+                modal: action.payload,
             };
 
         default:

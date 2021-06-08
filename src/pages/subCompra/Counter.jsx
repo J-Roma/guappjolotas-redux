@@ -28,7 +28,7 @@ const Counter = () => {
 
     useEffect(() => {
         dispatch(setAmount(count))
-        dispatch(setPrice(count*25))
+        dispatch(setPrice(count*currentProduct.price))
         currentProduct.quantity = count
         dispatch(setProduct(currentProduct))
         

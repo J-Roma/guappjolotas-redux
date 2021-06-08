@@ -28,3 +28,17 @@ export const load = (datos) => {
       })  
     }
 }
+
+export const  loadProductsCart = (product) => {
+    return {
+        type: types.dbCart,
+        payload: product
+    };
+};
+
+export const  setModal = (product) => {
+    return {
+        type: types.dbCartModal,
+        payload: product
+    };
+};
