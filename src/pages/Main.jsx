@@ -1,11 +1,18 @@
-import React from 'react'
+import React from "react";
+import Buscador from "../components/Buscador";
+import CardMainPage from "./CardMainPage";
+import NameMealsList from "./NameMealsList";
+import Navbar from "./Navbar.jsx";
 
 const Main = () => {
-    return (
-        <div>
-            
-        </div>
-    )
-}
+  return (
+    <div>
+      <Navbar />
+      <Buscador />
+      <NameMealsList />
+      <CardMainPage />
+    </div>
+  );
+};
 
-export default Main
+export default Main;

@@ -10,7 +10,7 @@ export const registro = (state = initialState, action) => {
     case types.uiSetError:
       return {
         ...state,
-        msjError: action.plaload,
+        msjError: action.payload,
       };
 
     case types.uiRemoveError:
