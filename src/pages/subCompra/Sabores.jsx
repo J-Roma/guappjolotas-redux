@@ -2,6 +2,7 @@ import React from 'react'
 import { useDispatch } from 'react-redux'
 import styled from 'styled-components'
 import { setProduct } from '../../actions/addPedido'
+import { loadCompraProducto } from '../../actions/dbProductos'
 
 const Center = styled.div`
     margin: 0 auto;
@@ -19,32 +20,54 @@ const Img = styled.img`
 const Sabores = () => {
 
     const dispatch = useDispatch()
+    const category = useSelector(state => state.db.dbProducts.product)
     const handleProduct = (e) => {
 
         dispatch(setProduct(e.target.id))
+        dispatch(loadCompraProducto(category, e.target.name))
     }
 
     return (
+        category.category !== "drink" ?
         <Center className="container p-4">
             <h3><strong>Sabor</strong></h3>
             <div class="d-flex flex-row flex-wrap bd-highlight mb-3 justify-content-start gap-2 ms-1">
                 <div class="p-3 bd-highlight text-center">
-                    <Img onClick={handleProduct} id="Guajolota Verde" src="https://i.imgur.com/vwb6NV8.png" alt="" />
+                    <Img onClick={handleProduct} id={`${category.category} Verde`} name="verde" src="https://i.imgur.com/vwb6NV8.png" alt="" />
                 </div>
                 <div class="p-3  bd-highlight text-center">
-                    <Img onClick={handleProduct} id="Guajolota de Mole" src="https://i.imgur.com/Q9L1kek.png" alt="" />
+                    <Img onClick={handleProduct} id={`${category.category} de Mole`} name="mole" src="https://i.imgur.com/Q9L1kek.png" alt="" />
                 </div>
                 <div class="p-3 bd-highlight text-center">
-                    <Img onClick={handleProduct} id="Guajolota de Guayaba" src="https://i.imgur.com/ZfozpXu.png" alt="" />
+                    <Img onClick={handleProduct} id={`${category.category} de Guayaba`} name="guayaba" src="https://i.imgur.com/ZfozpXu.png" alt="" />
                 </div>
                 <div class="p-3 bd-highlight text-center">
-                    <Img onClick={handleProduct} id="Guajalote de Piña" src="https://i.imgur.com/ILG91RE.png" alt="" />
+                    <Img onClick={handleProduct} id={`${category.category} Verde`} name="piña" src="https://i.imgur.com/ILG91RE.png" alt="" />
                 </div>
                 <div class="p-3 bd-highlight text-center">
-                    <Img onClick={handleProduct} id="Guajalote de Pasas" src="https://i.imgur.com/1A5007d.png" alt="" />
+                    <Img onClick={handleProduct} id={`${category.category} Verde`} name="pasas" src="https://i.imgur.com/1A5007d.png" alt="" />
                 </div>
             </div>  
         </Center>
+        : 
+        <Center className="container p-4">
+            <h3><strong>Sabor</strong></h3>
+            <div class="d-flex flex-row flex-wrap bd-highlight mb-3 justify-content-start gap-2 ms-1">
+                <div class="p-3 bd-highlight text-center">
+                    <Img onClick={handleProduct} id={`${category.category} Verde`} name="atole" src="https://i.imgur.com/gkQNStr.png" alt="" />
+                </div>
+                <div class="p-3  bd-highlight text-center">
+                    <Img onClick={handleProduct} id={`${category.category} Verde`} name="cafe" src="https://i.imgur.com/Y9x05Qw.png" alt="" />
+                </div>
+                <div class="p-3 bd-highlight text-center">
+                    <Img onClick={handleProduct} id={`${category.category} Verde`} name="chamupurrado" src="https://i.imgur.com/AU5V9vM.png" alt="" />
+                </div>
+                <div class="p-3 bd-highlight text-center">
+                    <Img onClick={handleProduct} id={`${category.category} Verde`} name="chocolate" src="https://i.imgur.com/HvQd4hk.png" alt="" />
+                </div>
+            </div>  
+        </Center>
+
     )
 }
 

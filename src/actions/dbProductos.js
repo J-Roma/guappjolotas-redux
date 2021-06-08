@@ -27,3 +27,21 @@ export const load = (datos) => {
         });   
     }
 }
+
+export const loadCompraProducto = (producto, sabor) => {    
+    
+  return (dispatch) => {
+      db.collection(`app/productos/${producto}/${sabor}`)
+      .onSnapshot( snap => {
+        const productos = [];
+         snap.forEach(snapHijo => {
+          productos.push({
+            ...snapHijo.data()
+          })
+          console.log(productos);
+
+        })
+        dispatch(loadProducts(productos))
+      });   
+  }
+}
