@@ -1,8 +1,8 @@
 {
   "files": {
     "main.css": "/guappjolotas-redux/static/css/main.46c4afb6.chunk.css",
-    "main.js": "/guappjolotas-redux/static/js/main.23f5455f.chunk.js",
-    "main.js.map": "/guappjolotas-redux/static/js/main.23f5455f.chunk.js.map",
+    "main.js": "/guappjolotas-redux/static/js/main.e7ac31ac.chunk.js",
+    "main.js.map": "/guappjolotas-redux/static/js/main.e7ac31ac.chunk.js.map",
     "runtime-main.js": "/guappjolotas-redux/static/js/runtime-main.d77259e7.js",
     "runtime-main.js.map": "/guappjolotas-redux/static/js/runtime-main.d77259e7.js.map",
     "static/js/2.33b72dff.chunk.js": "/guappjolotas-redux/static/js/2.33b72dff.chunk.js",
@@ -15,6 +15,6 @@
     "static/js/runtime-main.d77259e7.js",
     "static/js/2.33b72dff.chunk.js",
     "static/css/main.46c4afb6.chunk.css",
-    "static/js/main.23f5455f.chunk.js"
+    "static/js/main.e7ac31ac.chunk.js"
   ]
 }
